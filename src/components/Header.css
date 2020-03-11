@@ -2,10 +2,18 @@
   text-align: center;
   margin-top: 50px;
   font-size: 16px;
-  color: #5f5d5d;
+
   text-decoration: underline;
 }
 
 .h1 {
   font-weight: bold;
+}
+
+.h1 a {
+  color: #5f5d5d;
+}
+
+.h1 a:visited {
+  color: #5f5d5d;
 }
