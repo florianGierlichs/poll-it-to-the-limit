@@ -1,0 +1,15 @@
+.input {
+  margin: 50px;
+  width: 300px;
+  height: 30px;
+  font-size: 1.4rem;
+  padding: 10px;
+  transform: skew(30deg);
+  border-radius: 10px;
+  border: none;
+  background-color: whitesmoke;
+}
+
+.input::placeholder {
+  transform: skew(-30deg);
+}
