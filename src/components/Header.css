@@ -9,3 +9,7 @@
 .h1 {
   font-weight: bold;
 }
+
+.h1 a:visited {
+  color: #5f5d5d;
+}
