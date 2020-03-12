@@ -20,13 +20,17 @@ function AddPoll() {
       answerThree: answerThree
     };
 
-    const response = await fetch(process.env.REACT_APP_POLLS_API, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(poll)
-    });
+    const response = await fetch(
+      process.env.REACT_APP_POLLS_API ||
+        'http://my-json-server.typicode.com/florianGierlichs/poll-it-to-the-limit/polls',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(poll)
+      }
+    );
     const createdPoll = await response.json();
     alert(`Created poll with the id ${createdPoll.id}`);
   }
