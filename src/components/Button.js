@@ -5,7 +5,7 @@ function Button(props) {
   return (
     <>
       <button className="button" {...props}>
-        <div className="btn-text">{props.btnText}</div>
+        <div className="btntext">{props.btntext}</div>
       </button>
     </>
   );

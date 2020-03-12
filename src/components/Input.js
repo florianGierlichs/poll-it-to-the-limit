@@ -4,12 +4,8 @@ import "./Input.css";
 function Input(props) {
   return (
     <>
-      <label className={props.wrapperClass}>
-        <input
-          className={props.class}
-          placeholder={props.placeholder}
-          id={props.id}
-        />
+      <label className={props.wrapperclass}>
+        <input {...props} />
       </label>
     </>
   );

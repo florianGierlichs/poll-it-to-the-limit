@@ -7,7 +7,7 @@
   transform: skew(30deg);
 }
 
-.btn-text {
+.btntext {
   transform: skew(-30deg);
   color: #504d4d;
 }
