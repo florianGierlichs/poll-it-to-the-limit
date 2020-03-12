@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Input from "../components/Input";
+import Button from "../components/Button";
 
 function AddPoll() {
   return (
@@ -29,6 +30,7 @@ function AddPoll() {
         class="input"
         id="thirdOption"
       />
+      <Button btnText="Start poll!!"></Button>
       <Link to="/VotePoll">VotePoll</Link>
     </>
   );
