@@ -1,14 +1,14 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import Input from "../components/Input";
-import Button from "../components/Button";
-import "./Add-poll.css";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Input from '../components/Input';
+import Button from '../components/Button';
+import './Add-poll.css';
 
 function AddPoll() {
-  const [question, setQuestion] = React.useState("");
-  const [answerOne, setAnswerOne] = React.useState("");
-  const [answerTwo, setAnswerTwo] = React.useState("");
-  const [answerThree, setAnswerTree] = React.useState("");
+  const [question, setQuestion] = React.useState('');
+  const [answerOne, setAnswerOne] = React.useState('');
+  const [answerTwo, setAnswerTwo] = React.useState('');
+  const [answerThree, setAnswerTree] = React.useState('');
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -27,7 +27,7 @@ function AddPoll() {
     <>
       <form onSubmit={handleSubmit}>
         <Input
-          wrapperclass="inputWrapper"
+          wrapperclass="inputWrapper inputWrapper--question"
           placeholder="What's your poll?"
           className="input"
           id="questionPoll"
@@ -37,7 +37,7 @@ function AddPoll() {
           }}
         />
         <Input
-          wrapperclass="optionWrapper"
+          wrapperclass="inputWrapper"
           placeholder="first option"
           className="input"
           id="firstOption"
@@ -47,7 +47,7 @@ function AddPoll() {
           }}
         />
         <Input
-          wrapperclass="optionWrapper"
+          wrapperclass="inputWrapper"
           placeholder="second option"
           className="input"
           id="secondOption"
@@ -57,7 +57,7 @@ function AddPoll() {
           }}
         />
         <Input
-          wrapperclass="optionWrapper"
+          wrapperclass="inputWrapper"
           placeholder="third option"
           className="input"
           id="thirdOption"

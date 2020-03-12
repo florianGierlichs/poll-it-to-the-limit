@@ -1,25 +1,18 @@
 .inputWrapper {
-  margin: 50px;
-  margin-bottom: 120px;
-  transform: skew(30deg);
-  background-color: whitesmoke;
-  border-radius: 10px;
+  position: relative;
+  margin-bottom: 20px;
   padding: 10px;
 }
 
-.optionWrapper {
-  margin: 20px;
-  transform: skew(30deg);
-  background-color: whitesmoke;
-  border-radius: 10px;
-  padding: 10px;
+.inputWrapper--question {
+  margin-top: 50px;
+  margin-bottom: 100px;
 }
 
 .input {
   width: 300px;
   font-size: 1.4rem;
-  transform: skew(-30deg);
-  background-color: whitesmoke;
+  background: none;
   color: #5f5d5d;
   border: none;
   outline: none;
@@ -27,4 +20,16 @@
 
 .input::placeholder {
   color: #5f5d5d8a;
+}
+
+.skew-background {
+  transform: skew(30deg);
+  background-color: whitesmoke;
+  position: absolute;
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  top: 0;
+  left: -5px;
 }
