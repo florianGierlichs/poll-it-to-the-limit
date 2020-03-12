@@ -6,7 +6,7 @@ function Input(props) {
     <>
       <label className="inputWrapper">
         <input
-          className="input"
+          className={props.class}
           placeholder={props.placeholder}
           id={props.id}
         />
