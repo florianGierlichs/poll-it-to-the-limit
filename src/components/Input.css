@@ -1,5 +1,14 @@
 .inputWrapper {
   margin: 50px;
+  margin-bottom: 120px;
+  transform: skew(30deg);
+  background-color: whitesmoke;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.optionWrapper {
+  margin: 20px;
   transform: skew(30deg);
   background-color: whitesmoke;
   border-radius: 10px;
@@ -11,6 +20,7 @@
   font-size: 1.4rem;
   transform: skew(-30deg);
   background-color: whitesmoke;
+  color: #5f5d5d;
   border: none;
   outline: none;
 }

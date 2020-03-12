@@ -4,7 +4,7 @@ import "./Input.css";
 function Input(props) {
   return (
     <>
-      <label className="inputWrapper">
+      <label className={props.wrapperClass}>
         <input
           className={props.class}
           placeholder={props.placeholder}
