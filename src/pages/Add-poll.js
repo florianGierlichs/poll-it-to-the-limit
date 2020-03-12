@@ -1,7 +1,9 @@
+ AddPoll
 import React from "react";
 import { Link } from "react-router-dom";
 import Input from "../components/Input";
 import Button from "../components/Button";
+
 
 function AddPoll() {
   return (
