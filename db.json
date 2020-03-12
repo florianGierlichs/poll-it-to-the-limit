@@ -1,0 +1,11 @@
+{
+  "polls": [
+    {
+      "id": 1,
+      "question": "Where do we eat today?",
+      "answerOne": "Mr. eat, du Lauch",
+      "answerTwo": "Bei dem Asia-Dingens, du Schlauch",
+      "answerThree": "Ich hab Polizei"
+    }
+  ]
+}
