@@ -6,9 +6,9 @@ function AddPoll() {
   return (
     <>
       <Input placeholder="What's your poll?" id="questionPoll" />
-      <Input placeholder="What's your poll?" id="firstOption" />
-      <Input placeholder="What's your poll?" id="secondOption" />
-      <Input placeholder="What's your poll?" id="thirdOption" />
+      <Input placeholder="first option" id="firstOption" />
+      <Input placeholder="second option" id="secondOption" />
+      <Input placeholder="third option" id="thirdOption" />
       <Link to="/VotePoll">VotePoll</Link>
     </>
   );
