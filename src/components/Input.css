@@ -1,15 +1,16 @@
-.input {
+.inputWrapper {
   margin: 50px;
-  width: 300px;
-  height: 30px;
-  font-size: 1.4rem;
-  padding: 10px;
   transform: skew(30deg);
-  border-radius: 10px;
-  border: none;
   background-color: whitesmoke;
+  border-radius: 10px;
+  padding: 10px;
 }
 
-.input::placeholder {
+.input {
+  width: 300px;
+  font-size: 1.4rem;
   transform: skew(-30deg);
+  background-color: whitesmoke;
+  border: none;
+  outline: none;
 }

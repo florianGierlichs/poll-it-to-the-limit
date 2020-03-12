@@ -4,7 +4,9 @@ import "./Input.css";
 function Input(props) {
   return (
     <>
-      <input className="input" placeholder={props.placeholder} />
+      <label className="inputWrapper">
+        <input className="input" placeholder={props.placeholder} />
+      </label>
     </>
   );
 }
