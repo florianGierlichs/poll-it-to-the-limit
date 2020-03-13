@@ -1,13 +1,27 @@
 .button {
   margin: 50px;
+  margin-bottom: 20px;
   font-size: 1.4rem;
   background-color: whitesmoke;
   border-radius: 10px;
   padding: 10px 30px;
-  transform: skew(30deg);
+  position: relative;
+  background: none;
+  border: none;
 }
 
 .btntext {
-  transform: skew(-30deg);
   color: #504d4d;
+}
+
+.skew-background {
+  transform: skew(30deg);
+  background-color: whitesmoke;
+  position: absolute;
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  top: 0;
+  left: -5px;
 }
