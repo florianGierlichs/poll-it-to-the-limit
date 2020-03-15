@@ -22,7 +22,7 @@ function AddPoll() {
 
     const response = await fetch(
       process.env.REACT_APP_POLLS_API ||
-        `http://my-json-server.typicode.com/florianGierlichs/poll-it-to-the-limit/polls`,
+        `https://my-json-server.typicode.com/florianGierlichs/poll-it-to-the-limit/polls`,
       {
         method: 'POST',
         headers: {

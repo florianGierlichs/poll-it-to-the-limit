@@ -5,7 +5,7 @@ import './Results-poll.css';
 
 const POLLS_API_URL =
   process.env.REACT_APP_POLLS_API ||
-  `http://my-json-server.typicode.com/florianGierlichs/poll-it-to-the-limit/polls`;
+  `https://my-json-server.typicode.com/florianGierlichs/poll-it-to-the-limit/polls`;
 
 function ResultsPoll() {
   const { pollId } = useParams();
