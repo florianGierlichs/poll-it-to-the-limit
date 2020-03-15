@@ -5,7 +5,7 @@ function VotePoll() {
   return (
     <>
       <div>VotePoll</div>
-      <Link to="/ResultsPoll">ResultsPoll</Link>
+      <Link to="/polls/:pollId">ResultsPoll</Link>
     </>
   );
 }

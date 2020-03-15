@@ -1,0 +1,31 @@
+.outputWrapper {
+  position: relative;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.outputWrapper--question {
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
+.output {
+  width: 300px;
+  font-size: 1.4rem;
+  background: none;
+  color: #5f5d5d;
+  border: none;
+  outline: none;
+}
+
+.skew-background {
+  transform: skew(30deg);
+  background-color: whitesmoke;
+  position: absolute;
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  top: 0;
+  left: -5px;
+}

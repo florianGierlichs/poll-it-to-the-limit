@@ -21,7 +21,7 @@ function App() {
           <Route path="/VotePoll">
             <VotePoll />
           </Route>
-          <Route path="/ResultsPoll">
+          <Route path="/polls/:pollId">
             <ResultsPoll />
           </Route>
         </Switch>
