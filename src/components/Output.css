@@ -10,12 +10,16 @@
 }
 
 .output {
+  font-family: 'Roboto', sans-serif;
   width: 300px;
+  min-height: 26px;
+  max-height: 52px;
   font-size: 1.4rem;
   background: none;
   color: #5f5d5d;
   border: none;
   outline: none;
+  overflow: scroll;
 }
 
 .skew-background {
