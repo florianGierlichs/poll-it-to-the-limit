@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { SkewInput } from '../components/Input';
 import Button from '../components/Button';
 import './Add-poll.css';
+import Form from '../components/Form';
 
 function AddPoll() {
   const [question, setQuestion] = React.useState('');
@@ -17,7 +18,8 @@ function AddPoll() {
       question: question,
       answerOne: answerOne,
       answerTwo: answerTwo,
-      answerThree: answerThree
+      answerThree: answerThree,
+      vote: []
     };
 
     const response = await fetch(
@@ -37,7 +39,7 @@ function AddPoll() {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit}>
         <SkewInput
           wrapperclass="inputWrapper inputWrapper--question"
           placeholder="What's your poll?"
@@ -80,7 +82,7 @@ function AddPoll() {
         />
         <Button btntext="Start poll!!"></Button>
         <Link to="/VotePoll">VotePoll</Link>
-      </form>
+      </Form>
     </>
   );
 }

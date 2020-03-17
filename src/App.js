@@ -18,7 +18,7 @@ function App() {
           <Route path="/AddPoll">
             <AddPoll />
           </Route>
-          <Route path="/VotePoll">
+          <Route path="/polls/:pollId">
             <VotePoll />
           </Route>
           <Route path="/polls/:pollId">

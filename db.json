@@ -5,42 +5,48 @@
       "question": "Where do we eat today?",
       "answerOne": "Mr. eat, du Lauch",
       "answerTwo": "Bei dem Asia-Dingens, du Schlauch",
-      "answerThree": "Ich hab Polizei"
+      "answerThree": "Ich hab Polizei",
+      "vote": []
     },
     {
       "question": "",
       "answerOne": "",
       "answerTwo": "",
       "answerThree": "",
-      "id": 2
+      "id": 2,
+      "vote": []
     },
     {
       "question": "frage",
       "answerOne": "antwort 1",
       "answerTwo": "antwort 2",
       "answerThree": "antwort 3",
-      "id": 3
+      "id": 3,
+      "vote": []
     },
     {
       "question": "What to drink tonight",
       "answerOne": "Beer",
       "answerTwo": "Gin Tonic",
       "answerThree": "Ketchup",
-      "id": 4
+      "id": 4,
+      "vote": []
     },
     {
       "question": "What to have for breakfast",
       "answerOne": "Eggs",
       "answerTwo": "Toast",
       "answerThree": "cereal",
-      "id": 5
+      "id": 5,
+      "vote": []
     },
     {
       "question": "I need a very long sentence for my question",
       "answerOne": "first answerrr",
       "answerTwo": "",
       "answerThree": "third",
-      "id": 6
+      "id": 6,
+      "vote": []
     }
   ]
 }
