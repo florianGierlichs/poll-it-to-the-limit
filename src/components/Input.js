@@ -1,14 +1,36 @@
 import React from 'react';
 import './Input.css';
 
-function Input(props) {
+function SkewContainer({ children }) {
   return (
-    <>
-      <label className={props.wrapperclass}>
-        <div className="skew-background"></div>
-        <input {...props} />
-      </label>
-    </>
+    <div className="skew-container">
+      <div className="skew-background"></div>
+      {children}
+    </div>
+  );
+}
+
+function SkewInput(props) {
+  return (
+    <SkewContainer>
+      <input className="skew-input" {...props} />
+    </SkewContainer>
+  );
+}
+
+function SkewButton(props) {
+  return (
+    <SkewContainer>
+      <button className="skew-button" {...props} />
+    </SkewContainer>
+  );
+}
+
+function SkewOutput(props) {
+  return (
+    <SkewContainer>
+      <div {...props} />
+    </SkewContainer>
   );
 }
 
