@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { SkewInput } from '../components/Input';
 import Button from '../components/Button';
-import './Add-poll.css';
 import Form from '../components/Form';
 
 function AddPoll() {
@@ -19,7 +18,7 @@ function AddPoll() {
       answerOne: answerOne,
       answerTwo: answerTwo,
       answerThree: answerThree,
-      vote: []
+      votes: []
     };
 
     const response = await fetch(

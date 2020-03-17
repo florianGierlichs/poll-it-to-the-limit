@@ -23,6 +23,22 @@ function VotePoll() {
     getPoll();
   }, [pollId]);
 
+  async function handleSubmit(event) {
+    event.preventDefault();
+
+    const newPoll = { ...poll };
+    newPoll.votes.push(answer);
+
+    await fetch(`${POLLS_API_URL}/${pollId}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newPoll)
+    });
+    history.push(`/polls/${poll.id}`);
+  }
+
   return (
     <>
       <Form></Form>
