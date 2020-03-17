@@ -1,12 +1,31 @@
 import React from 'react';
 import './Input.css';
+import styled from '@emotion/styled';
+
+const SKEW_CONTAINER = styled.div`
+  position: relative;
+  margin-bottom: 20px;
+  padding: 10px;
+`;
+
+const SKEW_BACKGROUND = styled.div`
+  transform: skew(30deg);
+  background-color: whitesmoke;
+  position: absolute;
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  top: 0;
+  left: -5px;
+`;
 
 function SkewContainer({ children }) {
   return (
-    <div className="skew-container">
-      <div className="skew-background"></div>
+    <SKEW_CONTAINER>
+      <SKEW_BACKGROUND />
       {children}
-    </div>
+    </SKEW_CONTAINER>
   );
 }
 
@@ -34,4 +53,4 @@ function SkewOutput(props) {
   );
 }
 
-export default Input;
+export { SkewInput, SkewOutput, SkewButton };

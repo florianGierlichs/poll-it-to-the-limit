@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Input from '../components/Input';
+import { SkewInput } from '../components/Input';
 import Button from '../components/Button';
 import './Add-poll.css';
 
@@ -38,7 +38,7 @@ function AddPoll() {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <Input
+        <SkewInput
           wrapperclass="inputWrapper inputWrapper--question"
           placeholder="What's your poll?"
           className="input"
@@ -48,7 +48,7 @@ function AddPoll() {
             setQuestion(event.target.value);
           }}
         />
-        <Input
+        <SkewInput
           wrapperclass="inputWrapper"
           placeholder="first option"
           className="input"
@@ -58,7 +58,7 @@ function AddPoll() {
             setAnswerOne(event.target.value);
           }}
         />
-        <Input
+        <SkewInput
           wrapperclass="inputWrapper"
           placeholder="second option"
           className="input"
@@ -68,7 +68,7 @@ function AddPoll() {
             setAnswerTwo(event.target.value);
           }}
         />
-        <Input
+        <SkewInput
           wrapperclass="inputWrapper"
           placeholder="third option"
           className="input"
