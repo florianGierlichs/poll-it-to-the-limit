@@ -8,13 +8,19 @@ import ResultsPoll from './pages/Results-poll';
 import GlobalStyles from './components/GlobalStyles';
 import { ThemeProvider } from 'emotion-theming';
 import spring from './themes/spring';
+import venom from './themes/venom';
 
 function App() {
+  const [theme, setTheme] = React.useState(spring);
   return (
-    <ThemeProvider theme={spring}>
+    <ThemeProvider theme={theme}>
       <Router>
         <GlobalStyles />
-        <Header></Header>
+        <Header
+          onSwitchThemeButtonClick={() => {
+            setTheme(theme === venom ? spring : venom);
+          }}
+        ></Header>
         <main className="main">
           <Switch>
             <Route exact path="/">
