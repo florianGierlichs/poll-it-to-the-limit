@@ -1,8 +1,8 @@
-.inputWrapper {
+/* .inputWrapper {
   position: relative;
   margin-bottom: 20px;
   padding: 10px;
-}
+} */
 
 .inputWrapper--question {
   margin-top: 50px;
@@ -22,7 +22,7 @@
   color: #5f5d5d8a;
 }
 
-.skew-background {
+/* .skew-background {
   transform: skew(30deg);
   background-color: whitesmoke;
   position: absolute;
@@ -32,4 +32,4 @@
   z-index: -1;
   top: 0;
   left: -5px;
-}
+} */
