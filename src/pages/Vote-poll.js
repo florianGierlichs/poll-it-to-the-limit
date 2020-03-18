@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useParams, useHistory } from 'react-router-dom';
 import Form from '../components/Form';
+import { SkewOutput, SkewButton } from '../components/Input';
+import Button from '../components/Button';
 
 const POLLS_API_URL =
   process.env.REACT_APP_POLLS_API ||
@@ -41,7 +43,37 @@ function VotePoll() {
 
   return (
     <>
-      <Form></Form>
+      <Form onSubmit={handleSubmit}>
+        <SkewOutput>{poll?.question}</SkewOutput>
+        <SkewButton
+          type="radio"
+          name="answer"
+          value="answerOne"
+          checked={answer === 'answerOne'}
+          onChange={event => setAnswer(event.target.value)}
+        >
+          {poll?.answerOne}
+        </SkewButton>
+        <SkewButton
+          type="radio"
+          name="answer"
+          value="answerTwo"
+          checked={answer === 'answerTwo'}
+          onChange={event => setAnswer(event.target.value)}
+        >
+          {poll?.answerTwo}
+        </SkewButton>
+        <SkewButton
+          type="radio"
+          name="answer"
+          value="answerThree"
+          checked={answer === 'answerThree'}
+          onChange={event => setAnswer(event.target.value)}
+        >
+          {poll?.answerThree}
+        </SkewButton>
+        <Button btntext="Vote!!!"></Button>
+      </Form>
       <Link to="/polls/:pollId">ResultsPoll</Link>
     </>
   );
