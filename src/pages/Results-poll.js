@@ -7,17 +7,25 @@ import { getPoll } from '../api/polls';
 function ResultsPoll() {
   const { pollId } = useParams();
   const [poll, setPoll] = React.useState(null);
+  const [errorMessage, setErrorMessage] = React.useState(false);
 
   React.useEffect(() => {
     async function doGetPoll() {
-      const poll = await getPoll(pollId);
-      setPoll(poll);
+      try {
+        const poll = await getPoll(pollId);
+        setPoll(poll);
+      } catch (error) {
+        setErrorMessage(error.message);
+      }
     }
-
     doGetPoll();
     // alternative:
     // getPoll(pollId).then(poll => setPoll(poll));
   }, [pollId]);
+
+  if (errorMessage) {
+    return <div>{errorMessage}</div>;
+  }
 
   return (
     <>
