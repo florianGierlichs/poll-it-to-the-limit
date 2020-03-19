@@ -4,10 +4,7 @@ import { useParams, useHistory } from 'react-router-dom';
 import Form from '../components/Form';
 import { SkewOutput, SkewButton } from '../components/Input';
 import Button from '../components/Button';
-
-const POLLS_API_URL =
-  process.env.REACT_APP_POLLS_API ||
-  `https://my-json-server.typicode.com/florianGierlichs/poll-it-to-the-limit/polls`;
+import { getPoll, patchPoll } from '../api/polls';
 
 function VotePoll() {
   const { pollId } = useParams();
@@ -16,13 +13,14 @@ function VotePoll() {
   const [answer, setAnswer] = React.useState(null);
 
   React.useEffect(() => {
-    async function getPoll() {
-      const response = await fetch(`${POLLS_API_URL}/${pollId}`);
-      const poll = await response.json();
+    async function doGetPoll() {
+      const poll = await getPoll(pollId);
       setPoll(poll);
     }
 
-    getPoll();
+    doGetPoll();
+    //Alternative:
+    // getPoll(pollId).then(poll => setPoll(poll));
   }, [pollId]);
 
   async function handleSubmit(event) {
@@ -31,13 +29,7 @@ function VotePoll() {
     const newPoll = { ...poll };
     newPoll.votes.push(answer);
 
-    await fetch(`${POLLS_API_URL}/${pollId}`, {
-      method: 'PATCH',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(newPoll)
-    });
+    await patchPoll(pollId, newPoll);
     history.push(`/polls/${poll.id}`);
   }
 

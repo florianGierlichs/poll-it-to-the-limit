@@ -2,23 +2,21 @@ import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import Output from '../components/Output';
 import './Results-poll.css';
-
-const POLLS_API_URL =
-  process.env.REACT_APP_POLLS_API ||
-  `https://my-json-server.typicode.com/florianGierlichs/poll-it-to-the-limit/polls`;
+import { getPoll } from '../api/polls';
 
 function ResultsPoll() {
   const { pollId } = useParams();
   const [poll, setPoll] = React.useState(null);
 
   React.useEffect(() => {
-    async function getPoll() {
-      const response = await fetch(`${POLLS_API_URL}/${pollId}`);
-      const poll = await response.json();
+    async function doGetPoll() {
+      const poll = await getPoll(pollId);
       setPoll(poll);
     }
 
-    getPoll();
+    doGetPoll();
+    // alternative:
+    // getPoll(pollId).then(poll => setPoll(poll));
   }, [pollId]);
 
   return (
