@@ -10,9 +10,12 @@ function AddPoll() {
   const [answerOne, setAnswerOne] = React.useState('');
   const [answerTwo, setAnswerTwo] = React.useState('');
   const [answerThree, setAnswerTree] = React.useState('');
+  const [isLoading, setIsLoading] = React.useState(false);
 
   async function handleSubmit(event) {
     event.preventDefault();
+
+    setIsLoading(true);
 
     const poll = {
       question: question,
@@ -69,7 +72,7 @@ function AddPoll() {
             setAnswerTree(event.target.value);
           }}
         />
-        <Button btntext="Start poll!!"></Button>
+        <Button disabled={isLoading} btntext="Start poll!!"></Button>
         <Link to="/VotePoll">VotePoll</Link>
       </Form>
     </>
