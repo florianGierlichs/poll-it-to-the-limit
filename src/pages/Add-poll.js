@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { SkewInput } from '../components/Input';
 import Button from '../components/Button';
 import Form from '../components/Form';
+import { postPoll } from '../api/polls';
 
 function AddPoll() {
   const [question, setQuestion] = React.useState('');
@@ -21,19 +22,8 @@ function AddPoll() {
       votes: []
     };
 
-    const response = await fetch(
-      process.env.REACT_APP_POLLS_API ||
-        `https://my-json-server.typicode.com/florianGierlichs/poll-it-to-the-limit/polls`,
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(poll)
-      }
-    );
-    const createdPoll = await response.json();
-    alert(`Created poll with the id ${createdPoll.id}`);
+    const createdPoll = await postPoll(poll);
+    alert(`Created poll with id ${createdPoll.id}`);
   }
 
   return (
