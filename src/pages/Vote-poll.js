@@ -11,11 +11,14 @@ function VotePoll() {
   const history = useHistory();
   const [poll, setPoll] = React.useState(null);
   const [answer, setAnswer] = React.useState(null);
+  const [isLoadingPatchPoll, setIsLoadingPatchPoll] = React.useState(false);
+  const [isLoadingGetPoll, setIsLoadingGetPoll] = React.useState(true);
 
   React.useEffect(() => {
     async function doGetPoll() {
       const poll = await getPoll(pollId);
       setPoll(poll);
+      setIsLoadingGetPoll(false);
     }
 
     doGetPoll();
@@ -26,6 +29,8 @@ function VotePoll() {
   async function handleSubmit(event) {
     event.preventDefault();
 
+    setIsLoadingPatchPoll(true);
+
     const newPoll = { ...poll };
     newPoll.votes.push(answer);
 
@@ -33,10 +38,21 @@ function VotePoll() {
     history.push(`/polls/${poll.id}`);
   }
 
+  if (isLoadingGetPoll) {
+    return (
+      <div>
+        Loading....{' '}
+        <span role="img" aria-label="tease user">
+          😛
+        </span>
+      </div>
+    );
+  }
+
   return (
     <>
       <Form onSubmit={handleSubmit}>
-        <SkewOutput>{poll?.question}</SkewOutput>
+        <SkewOutput>{poll.question}</SkewOutput>
         <SkewButton
           type="radio"
           name="answer"
@@ -44,7 +60,7 @@ function VotePoll() {
           checked={answer === 'answerOne'}
           onChange={event => setAnswer(event.target.value)}
         >
-          {poll?.answerOne}
+          {poll.answerOne}
         </SkewButton>
         <SkewButton
           type="radio"
@@ -53,7 +69,7 @@ function VotePoll() {
           checked={answer === 'answerTwo'}
           onChange={event => setAnswer(event.target.value)}
         >
-          {poll?.answerTwo}
+          {poll.answerTwo}
         </SkewButton>
         <SkewButton
           type="radio"
@@ -62,9 +78,9 @@ function VotePoll() {
           checked={answer === 'answerThree'}
           onChange={event => setAnswer(event.target.value)}
         >
-          {poll?.answerThree}
+          {poll.answerThree}
         </SkewButton>
-        <Button btntext="Vote!!!"></Button>
+        <Button disabled={isLoadingPatchPoll} btntext="Vote!!!"></Button>
       </Form>
       <Link to="/polls/:pollId">ResultsPoll</Link>
     </>
