@@ -2,12 +2,12 @@
   text-align: center;
   margin-top: 50px;
   font-size: 16px;
-
   text-decoration: underline;
 }
 
 .h1 {
   font-weight: bold;
+  display: inline;
 }
 
 .h1 a {
