@@ -47,6 +47,14 @@
       "answerThree": "third",
       "id": 6,
       "vote": []
+    },
+    {
+      "question": "",
+      "answerOne": "",
+      "answerTwo": "",
+      "answerThree": "",
+      "votes": [],
+      "id": 7
     }
   ]
 }
