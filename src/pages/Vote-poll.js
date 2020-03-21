@@ -33,10 +33,10 @@ function VotePoll() {
     setIsLoadingPatchPoll(true);
 
     const newPoll = { ...poll };
-    newPoll.vote.push(answer);
+    newPoll.votes.push(answer);
 
     await patchPoll(pollId, newPoll);
-    history.push(`/polls/${poll.id}`);
+    history.push(`/polls/${newPoll.id}`);
   }
 
   if (isLoadingGetPoll) {
