@@ -5,6 +5,7 @@ import Form from '../components/Form';
 import { SkewOutput, SkewButton } from '../components/Input';
 import Button from '../components/Button';
 import { getPoll, patchPoll } from '../api/polls';
+import Loading from '../components/Loading';
 
 function VotePoll() {
   const { pollId } = useParams();
@@ -39,14 +40,7 @@ function VotePoll() {
   }
 
   if (isLoadingGetPoll) {
-    return (
-      <div>
-        Loading....{' '}
-        <span role="img" aria-label="tease user">
-          😛
-        </span>
-      </div>
-    );
+    return <Loading />;
   }
 
   return (
