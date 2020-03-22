@@ -51,21 +51,21 @@ function VotePoll() {
           label={poll.answerOne}
           name="answer"
           value="answerOne"
-          // checked={answer === 'answerOne'}
+          checked={answer === 'answerOne'}
           onChange={event => setAnswer(event.target.value)}
         />
         <SkewButton
           label={poll.answerTwo}
           name="answer"
           value="answerTwo"
-          // checked={answer === 'answerTwo'}
+          checked={answer === 'answerTwo'}
           onChange={event => setAnswer(event.target.value)}
         />
         <SkewButton
           label={poll.answerThree}
           name="answer"
           value="answerThree"
-          // checked={answer === 'answerThree'}
+          checked={answer === 'answerThree'}
           onChange={event => setAnswer(event.target.value)}
         />
         <Button disabled={isLoadingPatchPoll} btntext="Vote!!!"></Button>
