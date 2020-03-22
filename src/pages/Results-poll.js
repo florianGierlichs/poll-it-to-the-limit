@@ -28,6 +28,22 @@ function ResultsPoll() {
     // getPoll(pollId).then(poll => setPoll(poll));
   }, [pollId]);
 
+  const answerOneVotes = poll?.votes.filter(answer => answer === 'answerOne')
+    .length;
+
+  console.log(answerOneVotes);
+
+  const answerTwoVotes = poll?.votes.filter(answer => answer === 'answerTwo')
+    .length;
+
+  console.log(answerTwoVotes);
+
+  const answerThreeVotes = poll?.votes.filter(
+    answer => answer === 'answerThree'
+  ).length;
+
+  console.log(answerThreeVotes);
+
   if (isLoading) {
     return <Loading />;
   }
@@ -37,9 +53,9 @@ function ResultsPoll() {
   }
 
   const dataMock = [
-    { title: 'answerOne', value: 30, color: 'green' },
-    { title: 'answerTwo', value: 15, color: 'red' },
-    { title: 'answerThree', value: 20, color: 'blue' }
+    { title: 'answerOne', value: answerOneVotes, color: 'blue' },
+    { title: 'answerTwo', value: answerTwoVotes, color: 'red' },
+    { title: 'answerThree', value: answerThreeVotes, color: 'green' }
   ];
   const defaultLabelStyle = {
     fontSize: '10px',
@@ -57,15 +73,27 @@ function ResultsPoll() {
           {poll?.question}
         </Output>
 
-        <Output wrapperclass="outputWrapper" className="output">
+        <Output
+          wrapperclass="outputWrapper"
+          className="output"
+          backgroundcolor={{ backgroundColor: 'blue' }}
+        >
           {poll?.answerOne}
         </Output>
 
-        <Output wrapperclass="outputWrapper" className="output">
+        <Output
+          wrapperclass="outputWrapper"
+          className="output"
+          backgroundcolor={{ backgroundColor: 'red' }}
+        >
           {poll?.answerTwo}
         </Output>
 
-        <Output wrapperclass="outputWrapper" className="output">
+        <Output
+          wrapperclass="outputWrapper"
+          className="output"
+          backgroundcolor={{ backgroundColor: 'green' }}
+        >
           {poll?.answerThree}
         </Output>
 

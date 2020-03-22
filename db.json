@@ -6,7 +6,14 @@
       "answerTwo": "sexy time",
       "answerThree": "sport",
       "votes": [
-        "answerOne"
+        "answerOne",
+        "answerOne",
+        "answerTwo",
+        "answerThree",
+        "answerThree",
+        "answerThree",
+        "answerThree",
+        "answerThree"
       ],
       "id": 1
     },

@@ -5,7 +5,7 @@ function Output(props) {
   return (
     <>
       <label className={props.wrapperclass}>
-        <div className="skew-background"></div>
+        <div className="skew-background" style={props.backgroundcolor}></div>
         <div {...props}></div>
       </label>
     </>
