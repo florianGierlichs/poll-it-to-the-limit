@@ -11,6 +11,7 @@
     "emotion-theming": "^10.0.27",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
+    "react-minimal-pie-chart": "^6.0.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0"
   },
