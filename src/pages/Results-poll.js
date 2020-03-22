@@ -4,6 +4,7 @@ import Output from '../components/Output';
 import './Results-poll.css';
 import { getPoll } from '../api/polls';
 import Loading from '../components/Loading';
+import PieChart from 'react-minimal-pie-chart';
 
 function ResultsPoll() {
   const { pollId } = useParams();
@@ -35,6 +36,17 @@ function ResultsPoll() {
     return <div>{errorMessage}</div>;
   }
 
+  const dataMock = [
+    { title: 'answerOne', value: 30, color: 'green' },
+    { title: 'answerTwo', value: 15, color: 'red' },
+    { title: 'answerThree', value: 20, color: 'blue' }
+  ];
+  const defaultLabelStyle = {
+    fontSize: '10px',
+    fontFamily: 'sans-serif',
+    fill: 'whitesmoke'
+  };
+
   return (
     <>
       <div className="output--container">
@@ -56,6 +68,15 @@ function ResultsPoll() {
         <Output wrapperclass="outputWrapper" className="output">
           {poll?.answerThree}
         </Output>
+
+        <PieChart
+          data={dataMock}
+          style={{ height: '200px' }}
+          label={({ data, dataIndex }) =>
+            Math.round(data[dataIndex].percentage) + '%'
+          }
+          labelStyle={defaultLabelStyle}
+        />
 
         <Link to="/AddPoll">AddPoll</Link>
       </div>
