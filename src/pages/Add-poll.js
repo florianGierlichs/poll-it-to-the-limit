@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { SkewInput } from '../components/Input';
 import Button from '../components/Button';
 import Form from '../components/Form';
@@ -11,6 +11,7 @@ function AddPoll() {
   const [answerTwo, setAnswerTwo] = React.useState('');
   const [answerThree, setAnswerTree] = React.useState('');
   const [isLoading, setIsLoading] = React.useState(false);
+  const history = useHistory();
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -27,6 +28,7 @@ function AddPoll() {
 
     const createdPoll = await postPoll(poll);
     alert(`Created poll with id ${createdPoll.id}`);
+    history.push(`/polls/${createdPoll.id}/vote`);
   }
 
   return (

@@ -20,6 +20,12 @@ const SKEW_BACKGROUND = styled.div`
   left: -5px;
 `;
 
+const RADIO_INPUT = styled.input`
+  background-color: tomato;
+`;
+
+const RADIO_INPUT_LABEL = styled.label``;
+
 function SkewContainer({ children }) {
   return (
     <SKEW_CONTAINER>
@@ -37,10 +43,13 @@ function SkewInput(props) {
   );
 }
 
-function SkewButton(props) {
+function SkewButton({ label, ...props }) {
   return (
     <SkewContainer>
-      <button className="skew-button" {...props} />
+      <RADIO_INPUT_LABEL>
+        <RADIO_INPUT type="radio" {...props} />
+        {label}
+      </RADIO_INPUT_LABEL>
     </SkewContainer>
   );
 }
